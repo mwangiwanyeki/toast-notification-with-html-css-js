@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: aquamarine;
+}
+
+.container{
+    width: 440px;
+    display: flex;
+    flex-direction: column;
+    background-color: blueviolet;
+    margin: 20px auto;
+    padding: 20px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+.btn{
+    width: 60%;
+    height: 50px;
+    margin: 10px 10px;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+}
+.btn.btn1{
+    background-color: green;
+} .btn.btn2{
+    background-color: yellow;
+}
+.btn.btn3{
+    background-color: red;
+}
+
+#notificationBox{
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    overflow: hidden;
+    padding: 20px;
+} 
+
+.toast{
+    position: relative;
+    width: 400px;
+    height: 50px;
+    background-color: #fff;
+    font-weight: 500;
+    margin: 15px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    color: black;
+    border-radius: 5px;
+    padding: 20px;
+    transform: translateX(100%);
+    animation: moveLeft 0.7s linear forwards;
+}
+
+@keyframes moveLeft {
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.toast::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background-color: green;
+    animation: anim 5s linear forwards;
+}
+
+@keyframes anim {
+    100%{
+        width: 0;
+    }
+}
+
+.toast i{
+    margin: 0 5px;
+    font-size: 25px;
+    color: green;
+}
+
+.error i{
+    color: red;
+}
+
+.invalid i{
+    color: yellow;
+}
+
+.toast.invalid::after{
+    background-color: yellow;
+}
+
+.toast.error::after{
+    background-color: red;
+}
